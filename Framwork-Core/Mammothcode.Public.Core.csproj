@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73650D83-BC03-4A8F-BB16-09F2D6F6A71E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mammothcode.Core</RootNamespace>
+    <AssemblyName>Mammothcode.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Mammothcode.middle.Core\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LitJson">
+      <HintPath>..\Reference\LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\elasticsearch\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\Reference\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\Reference\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\Reference\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\Reference\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="O2S.Components.PDFRender4NET">
+      <HintPath>..\Reference\officeToPdf\O2S.Components.PDFRender4NET.dll</HintPath>
+    </Reference>
+    <Reference Include="O2S.Components.PDFView4NET">
+      <HintPath>..\Reference\O2S.Components.PDFView4NET.dll</HintPath>
+    </Reference>
+    <Reference Include="office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Reference\officeToPdf\office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\DataAnaly\DataJudgeUtil.cs" />
+    <Compile Include="Data\DataAnaly\RegexJayUtil.cs" />
+    <Compile Include="Data\DataAnaly\RegexNetUtil.cs" />
+    <Compile Include="Data\DataAnaly\StringUtil.cs" />
+    <Compile Include="Data\DataAnaly\URLUtil.cs" />
+    <Compile Include="Data\DataAutomatic\StringRandomUtil.cs" />
+    <Compile Include="Data\DataAutomatic\TableIdUtil.cs" />
+    <Compile Include="Data\DataConvert\DataExchangeUtil.cs" />
+    <Compile Include="Data\DataConvert\EcanConvertToChUtil.cs" />
+    <Compile Include="Data\DataConvert\EnumUtil.cs" />
+    <Compile Include="Data\DataConvert\ObjectUtil.cs" />
+    <Compile Include="Data\DataConvert\PinYinUtil.cs" />
+    <Compile Include="Data\DataConvert\PinYinUtilNew.cs" />
+    <Compile Include="Data\DataConvert\TimeUtil.cs" />
+    <Compile Include="Data\DataEncoding\HtmlUtil.cs" />
+    <Compile Include="Data\DataSecurity\EncryptUtil.cs" />
+    <Compile Include="Data\DataWeb\WebHelperUtil.cs" />
+    <Compile Include="File\DocExeclHtmlPdfFile\Execl\ExeclUtil.cs" />
+    <Compile Include="File\DocExeclHtmlPdfFile\OfficeToPdf.cs" />
+    <Compile Include="File\FileUploaderDown\MammothcodeDown.cs" />
+    <Compile Include="File\FileUploaderDown\MammothcodeUploader.cs" />
+    <Compile Include="File\FileUtil.cs" />
+    <Compile Include="File\VideoImage\ImageExifManager.cs" />
+    <Compile Include="File\VideoImage\ImageUtil.cs" />
+    <Compile Include="File\Loging4Net\Log4netUtil.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\AdoNetAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\AnsiColorTerminalAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\AppenderCollection.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\AppenderSkeleton.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\AspNetTraceAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\BufferingAppenderSkeleton.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\BufferingForwardingAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\ColoredConsoleAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\ConsoleAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\DebugAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\EventLogAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\FileAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\ForwardingAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\IAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\IBulkAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\LocalSyslogAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\ManagedColoredConsoleAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\MemoryAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\NetSendAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\OutputDebugStringAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\RemoteSyslogAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\RemotingAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\RollingFileAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\SmtpAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\SmtpPickupDirAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\TelnetAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\TextWriterAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\TraceAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Appender\UdpAppender.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Config\AliasDomainAttribute.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Config\AliasRepositoryAttribute.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Config\BasicConfigurator.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Config\ConfiguratorAttribute.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Config\DomainAttribute.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Config\DOMConfigurator.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Config\DOMConfiguratorAttribute.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Config\Log4NetConfigurationSectionHandler.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Config\PluginAttribute.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Config\RepositoryAttribute.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Config\SecurityContextProviderAttribute.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Config\XmlConfigurator.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Config\XmlConfiguratorAttribute.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\CompactRepositorySelector.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\DefaultRepositorySelector.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\ErrorCode.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\ExceptionEvaluator.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\IAppenderAttachable.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\IErrorHandler.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\IFixingRequired.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\ILogger.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\ILoggerWrapper.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\IOptionHandler.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\IRepositorySelector.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\ITriggeringEventEvaluator.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\Level.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\LevelCollection.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\LevelEvaluator.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\LevelMap.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\LocationInfo.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\LogException.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\LoggerManager.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\LoggerWrapperImpl.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\LoggingEvent.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\LogImpl.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\MethodItem.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\SecurityContext.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\SecurityContextProvider.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\StackFrameItem.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\TimeEvaluator.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Core\WrapperMap.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\DateFormatter\AbsoluteTimeDateFormatter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\DateFormatter\DateTimeDateFormatter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\DateFormatter\IDateFormatter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\DateFormatter\Iso8601DateFormatter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\DateFormatter\SimpleDateFormatter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Filter\DenyAllFilter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Filter\FilterDecision.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Filter\FilterSkeleton.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Filter\IFilter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Filter\LevelMatchFilter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Filter\LevelRangeFilter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Filter\LoggerMatchFilter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Filter\MdcFilter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Filter\NdcFilter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Filter\PropertyFilter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Filter\StringMatchFilter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\GlobalContext.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\ILog.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\DynamicPatternLayout.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\ExceptionLayout.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\ILayout.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\IRawLayout.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Layout2RawLayoutAdapter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\LayoutSkeleton.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\PatternLayout.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\AppDomainPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\AspNetCachePatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\AspNetContextPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\AspNetPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\AspNetRequestPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\AspNetSessionPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\DatePatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\ExceptionPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\FileLocationPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\FullLocationPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\IdentityPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\LevelPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\LineLocationPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\LoggerPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\MessagePatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\MethodLocationPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\NamedPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\NdcPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\PatternLayoutConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\PropertyPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\RelativeTimePatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\StackTraceDetailPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\StackTracePatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\ThreadPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\TypeNamePatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\UserNamePatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\Pattern\UtcDatePatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\RawLayoutConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\RawPropertyLayout.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\RawTimeStampLayout.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\RawUtcTimeStampLayout.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\SimpleLayout.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\XMLLayout.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\XMLLayoutBase.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Layout\XmlLayoutSchemaLog4j.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Log4netAssemblyInfo.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\LogicalThreadContext.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\LogManager.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\MDC.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\NDC.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\ObjectRenderer\DefaultRenderer.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\ObjectRenderer\IObjectRenderer.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\ObjectRenderer\RendererMap.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Plugin\IPlugin.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Plugin\IPluginFactory.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Plugin\PluginCollection.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Plugin\PluginMap.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Plugin\PluginSkeleton.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Plugin\RemoteLoggingServerPlugin.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Repository\ConfigurationChangedEventArgs.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Repository\Hierarchy\DefaultLoggerFactory.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Repository\Hierarchy\Hierarchy.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Repository\Hierarchy\ILoggerFactory.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Repository\Hierarchy\Logger.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Repository\Hierarchy\LoggerKey.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Repository\Hierarchy\ProvisionNode.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Repository\Hierarchy\RootLogger.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Repository\Hierarchy\XmlHierarchyConfigurator.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Repository\IBasicRepositoryConfigurator.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Repository\ILoggerRepository.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Repository\IXmlRepositoryConfigurator.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Repository\LoggerRepositorySkeleton.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\ThreadContext.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\AppenderAttachedImpl.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\CompositeProperties.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\ContextPropertiesBase.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\ConverterInfo.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\CountingQuietTextWriter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\CyclicBuffer.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\EmptyCollection.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\EmptyDictionary.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\FormattingInfo.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\GlobalContextProperties.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\ILogExtensions.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\LevelMapping.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\LevelMappingEntry.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\LogicalThreadContextProperties.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\LogLog.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\NativeError.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\NullDictionaryEnumerator.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\NullEnumerator.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\NullSecurityContext.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\OnlyOnceErrorHandler.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\OptionConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternParser.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternString.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternStringConverters\AppDomainPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternStringConverters\DatePatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternStringConverters\EnvironmentFolderPathPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternStringConverters\EnvironmentPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternStringConverters\IdentityPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternStringConverters\LiteralPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternStringConverters\NewLinePatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternStringConverters\ProcessIdPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternStringConverters\PropertyPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternStringConverters\RandomStringPatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternStringConverters\UserNamePatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PatternStringConverters\UtcDatePatternConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PropertiesDictionary.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\PropertyEntry.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\ProtectCloseTextWriter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\QuietTextWriter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\ReaderWriterLock.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\ReadOnlyPropertiesDictionary.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\ReusableStringWriter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\SystemInfo.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\SystemStringFormat.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\TextWriterAdapter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\ThreadContextProperties.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\ThreadContextStack.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\ThreadContextStacks.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\Transform.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\TypeConverters\BooleanConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\TypeConverters\ConversionNotSupportedException.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\TypeConverters\ConverterRegistry.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\TypeConverters\EncodingConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\TypeConverters\IConvertFrom.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\TypeConverters\IConvertTo.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\TypeConverters\IPAddressConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\TypeConverters\PatternLayoutConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\TypeConverters\PatternStringConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\TypeConverters\TypeConverter.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\TypeConverters\TypeConverterAttribute.cs" />
+    <Compile Include="File\Loging4Net\Log4Net\Util\WindowsSecurityContext.cs" />
+    <Compile Include="File\ValidateCodeUtil.cs" />
+    <Compile Include="File\VideoImage\VideoConvert.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayMent\Alipay\AliPayActionUtil.cs" />
+    <Compile Include="PayMent\Alipay\AlipayConfig.cs" />
+    <Compile Include="PayMent\Alipay\app_code\AlipayConfig.cs" />
+    <Compile Include="PayMent\Alipay\app_code\AlipayCore.cs" />
+    <Compile Include="PayMent\Alipay\app_code\AlipayNotify.cs" />
+    <Compile Include="PayMent\Alipay\app_code\AlipaySubmit.cs" />
+    <Compile Include="PayMent\Alipay\app_code\MD5.cs" />
+    <Compile Include="PayMent\Alipay\model\AliPayEnumModel.cs" />
+    <Compile Include="PayMent\Alipay\model\AliPayModel.cs" />
+    <Compile Include="PayMent\Alipay\model\AliPayReturnModel.cs" />
+    <Compile Include="PayMent\WeChatpay\business\DownloadBill.cs" />
+    <Compile Include="PayMent\WeChatpay\business\JsApiPay.cs" />
+    <Compile Include="PayMent\WeChatpay\business\MicroPay.cs" />
+    <Compile Include="PayMent\WeChatpay\business\NativeNotify.cs" />
+    <Compile Include="PayMent\WeChatpay\business\NativePay.cs" />
+    <Compile Include="PayMent\WeChatpay\business\OrderQuery.cs" />
+    <Compile Include="PayMent\WeChatpay\business\Refund.cs" />
+    <Compile Include="PayMent\WeChatpay\business\RefundQuery.cs" />
+    <Compile Include="PayMent\WeChatpay\business\ResultNotify.cs" />
+    <Compile Include="PayMent\WeChatpay\lib\Config.cs" />
+    <Compile Include="PayMent\WeChatpay\lib\Data.cs" />
+    <Compile Include="PayMent\WeChatpay\lib\Exception.cs" />
+    <Compile Include="PayMent\WeChatpay\lib\HttpService.cs" />
+    <Compile Include="PayMent\WeChatpay\lib\Log.cs" />
+    <Compile Include="PayMent\WeChatpay\lib\Notify.cs" />
+    <Compile Include="PayMent\WeChatpay\lib\WxPayApi.cs" />
+    <Compile Include="PayMent\WeChatpay\model\JSApi_model.cs" />
+    <Compile Include="PayMent\WeChatpay\WeChatpay.cs" />
+    <Compile Include="PostMan\PostManRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PostMan\PostManUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemTool\SystemUtil.cs" />
+    <Compile Include="Thread\ThreadUtil.cs" />
+    <Compile Include="Web\JS\JsHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,135 @@
+﻿<#@ template language="C#"  hostSpecific="true" #>
+<#@ import namespace="System"#>
+<#@import namespace="System.IO"#>
+<#@include file="$(SolutionDir)\Mammothcode.Model\Model_Auto\MammothcodeSqlManager.ttinclude"#>
+<#@include file="$(SolutionDir)\Mammothcode.Model\Model_Auto\TemplateFileManagerV2.1.ttinclude"#>
+<#@ output extension=".cs" #>
+ <#
+	    #region T4自动生成配置配置修改
+
+	    //数据库连接字符串地址
+		 string _dbConnectionPath = @"../../Mammothcode.XiuCheWenwen.WeChat/Web.config";
+
+		//数据库连接字符串节点名称
+		string _dbConnectionName = "strMysql";
+
+		//数据库名称
+	    string _dbDbName = "mammothcode_xiuchewenwen";
+
+		//数据库类型（SqlServer,MySql)
+		T4HelperTool.DbType _dbType =  T4HelperTool.DbType.MySql;
+
+	    #endregion
+
+          //T4模板管理
+          var manager = TemplateFileManager.Create(this);
+	      manager.CanOverrideExistingFile=true;
+          //数据库管理
+	      var list = T4HelperTool.GetTableStructureList(Host.ResolvePath(_dbConnectionPath),_dbConnectionName,_dbDbName,_dbType);
+		  foreach(T4HelperTool.DbTable entity in list)
+		  {
+			//如果碰到意外字符
+			if(entity.TableName.Contains("$"))
+			{
+				continue;
+			}
+			manager.StartNewFile(entity.TableName.ToUpper()+".cs");
+
+					#region 指定输出CS文件内容(模板）
+#>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Mammothcode.Public.Data;
+namespace Mammothcode.Model
+
+{
+    // 类描述：<#= string.IsNullOrEmpty(entity.TableComment)?"":entity.TableComment #>
+    public partial class <#= entity.TableName.ToUpper() #>:ModelBase
+    {
+
+         <#
+         foreach(T4HelperTool.DbColumn Column in entity.Column)
+         {
+            string name =Column.ColumnName;
+            string type = Column.CSharpType;
+            string columnDefault= Column.ColumnDefault;
+            string defaultValue = string.Empty;
+            string Attribute = "[Column]";
+            if(!string.IsNullOrEmpty(Column.ColumnDefault))
+            {
+                defaultValue = " = "+Column.ColumnDefault;
+            }
+            if(Column.IsPrimaryKey)
+            {
+                  if(Column.IsIdentity)
+                  {
+                    Attribute = "[Id(true)]";
+                  }
+                  else
+                  {
+                    Attribute = "[Id]";
+                  }
+            }
+            else
+            {
+                if(Column.IsIdentity)
+                {
+                   Attribute = "[Column(true)]";
+                }
+            }
+
+
+         #>
+
+         #region  属性描述：<#= string.IsNullOrEmpty(Column.ColumnComment)?"":Column.ColumnComment#>
+
+		 /// <summary>
+         /// <#= Column.ColumnComment#>
+         /// </summary>
+		 <#if(Column.CSharpType=="decimal?"){ #>
+		 private <#= Column.CSharpType#>  _<#=Column.ColumnName#><#=defaultValue.Replace(".00","")#>;
+		 <#}else if(Column.CSharpType=="long?"){#>
+         private <#= Column.CSharpType#>  _<#=Column.ColumnName#><#=defaultValue.Replace(".","")#>;
+		  <#}else if(Column.CSharpType=="string"){#>
+         private <#= Column.CSharpType#>  _<#=Column.ColumnName#><#=defaultValue.Replace("'","\"")#>;
+		 <#}else{#>
+         private <#= Column.CSharpType#>  _<#=Column.ColumnName#><#=defaultValue#>;
+		<# }#>
+		 /// <summary>
+         /// <#= Column.ColumnComment#>
+         /// </summary>
+         <#= Attribute#>
+         public <#= Column.CSharpType#> <#=Column.ColumnName#>
+         {
+           get
+            {
+                 return  _<#=Column.ColumnName#> ;
+            }
+            set
+            {
+                Fields.Add("<#=Column.ColumnName#>");
+                 _<#=Column.ColumnName#>  = value;
+            }
+         }
+
+         #endregion
+       <#
+        }
+#>
+
+    }
+}
+
+
+
+	<#
+		#endregion
+
+	     manager.EndBlock();
+}
+	manager.Process(true);
+	 #>

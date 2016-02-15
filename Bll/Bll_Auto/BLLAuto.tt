@@ -1,0 +1,144 @@
+﻿<#@ template language="C#" hostSpecific="true" #>
+<#@ import namespace="System"#>
+<#@import namespace="System.IO"#>
+<#@include file="$(SolutionDir)\Mammothcode.Model\Model_Auto\MammothcodeSqlManager.ttinclude"#>
+<#@include file="$(SolutionDir)\Mammothcode.Model\Model_Auto\TemplateFileManagerV2.1.ttinclude"#>
+<#@ output extension=".cs" #>
+ <#
+         #region T4自动生成配置配置修改
+
+		//过滤数据表名称
+		string allTableName="T_ROLES_POWERS|T_ADMIN_ROLES|T_USERS|V_USERS";
+
+	   //数据库连接字符串地址
+		 string _dbConnectionPath = @"../../Mammothcode.XiuCheWenwen.WeChat/Web.config";
+
+		//数据库连接字符串节点名称
+		string _dbConnectionName = "strMysql";
+
+		//数据库名称
+	    string _dbDbName = "mammothcode_xiuchewenwen";
+
+		//数据库类型（SqlServer,MySql)
+		T4HelperTool.DbType _dbType =  T4HelperTool.DbType.MySql;
+
+	    #endregion
+
+          //T4模板管理
+          var manager = TemplateFileManager.Create(this);
+	      manager.CanOverrideExistingFile=true;
+          //数据库管理
+	      var list = T4HelperTool.GetTableStructureList(Host.ResolvePath(_dbConnectionPath),_dbConnectionName,_dbDbName,_dbType);
+		  foreach(T4HelperTool.DbTable entity in list)
+		  {
+			//如果碰到意外字符
+			if(entity.TableName.Contains("$"))
+			{
+				continue;
+			}
+			manager.StartNewFile(entity.TableName.ToUpper()+".cs");
+
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Mammothcode.Model;
+using Mammothcode.Public.Data;
+namespace Mammothcode.BLL
+{
+
+    public partial class <#= entity.TableName.ToUpper() #>_BLL:BLLBase<<#= entity.TableName.ToUpper() #>>
+    {
+	<#
+	if(entity.TableName.ToUpper()=="T_USERS"||entity.TableName.ToUpper()=="V_USERS")
+    {
+        #>
+		private static Dictionary<string, <#= entity.TableName.ToUpper() #>> _entity=new Dictionary<string, T_USERS>();//私有字段
+        /// <summary>
+        /// 单例模式获取
+        /// </summary>
+        /// <returns>全局变量实体</returns>
+        public static <#= entity.TableName.ToUpper() #> GetEntity(string phone)
+        {
+           <#= entity.TableName.ToUpper() #> Entity = null;
+
+            if(phone!=null)
+            {
+                if (!_entity.ContainsKey(phone))
+                {
+                    _entity[phone] = new <#= entity.TableName.ToUpper() #>_BLL().GetEntity(new DapperExQuery<<#= entity.TableName.ToUpper() #>>().AndWhere(u=>u.U_PHONE,OperationMethod.Equal, phone));
+                }
+                Entity = _entity[phone];
+            }
+            return Entity;
+        }
+        /// <summary>
+        /// 获取临时变量
+        /// </summary>
+        /// <param name="isOverRide">是否覆盖单例变量</param>
+        /// <returns>临时变量</returns>
+       public static <#= entity.TableName.ToUpper() #> GetEntity(string phone,bool isOverRide)
+        {
+			<#= entity.TableName.ToUpper() #> Entity=null;
+			if(phone!=null){
+				 Entity = new <#= entity.TableName.ToUpper() #>_BLL().GetEntity(new DapperExQuery<<#= entity.TableName.ToUpper() #>>().AndWhere(u => u.U_PHONE, OperationMethod.Equal, phone));
+					if (isOverRide)
+					{
+						_entity[phone] = Entity;
+					}
+			}
+            return Entity;
+        }
+
+		<#
+    }
+	if(!Regex.IsMatch(entity.TableName.ToUpper(),allTableName))
+	{
+	#>
+		 private static Dictionary<string, <#= entity.TableName.ToUpper() #>> _entitylist=new Dictionary<string, <#= entity.TableName.ToUpper() #>>();//私有字段
+        /// <summary>
+        /// 单例模式获取
+        /// </summary>
+        /// <returns>全局变量实体</returns>
+        public static <#= entity.TableName.ToUpper() #> GetEntity(string ID)
+        {
+            <#= entity.TableName.ToUpper() #> Entity = null;
+			if(ID!=null)
+			{
+				if (!_entitylist.ContainsKey(ID))
+				{
+					_entitylist[ID] = new <#= entity.TableName.ToUpper() #>_BLL().GetEntity(new DapperExQuery<<#= entity.TableName.ToUpper() #>>().AndWhere(u=>u.ID,OperationMethod.Equal, ID));
+				}
+				Entity = _entitylist[ID];
+			}
+            return Entity;
+        }
+        /// <summary>
+        /// 获取临时变量
+        /// </summary>
+        /// <param name="isOverRide">是否覆盖单例变量</param>
+        /// <returns>临时变量</returns>
+        public static <#= entity.TableName.ToUpper() #> GetEntity(string ID,bool isOverRide)
+        {
+			<#= entity.TableName.ToUpper() #> Entity=null;
+			if(ID!=null){
+				Entity = new <#= entity.TableName.ToUpper() #>_BLL().GetEntity(new DapperExQuery<<#= entity.TableName.ToUpper() #>>().AndWhere(u => u.ID, OperationMethod.Equal, ID));
+				if (isOverRide)
+				{
+					_entitylist[ID] = Entity;
+				}
+			}
+            return Entity;
+        }
+	<#}#>
+    }
+}
+
+	<#
+
+	     manager.EndBlock();
+}
+	manager.Process(true);
+	 #>
