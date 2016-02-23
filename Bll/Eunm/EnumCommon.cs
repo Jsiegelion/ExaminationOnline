@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Mammothcode.BLL.Eunm
+namespace Mammothcode.Bll.Eunm
 {
     /// <summary>
     /// 功能描述：枚举公共类
@@ -53,20 +49,26 @@ namespace Mammothcode.BLL.Eunm
 
         #region 性别
         /// <summary>
-        /// 功能描述：性别
-        /// 创建人：甘春雨
-        /// 创建时间：2015年10月29日15:56:22
+        /// Gender
+        /// 创建人：Baby
+        /// 2016-2-23
         /// </summary>
         public enum GenderEnum
         {
             /// <summary>
             /// 男
             /// </summary>
-            男 = 1,
+            Male = 1,
+
             /// <summary>
             /// 女
             /// </summary>
-            女 = 0
+            Female = 0,
+
+            /// <summary>
+            /// 未知
+            /// </summary>
+            UnKnow = 2
         }
         #endregion
 
@@ -76,16 +78,10 @@ namespace Mammothcode.BLL.Eunm
         /// 创建人：甘春雨
         /// 创建时间：2015年10月29日15:56:22
         /// </summary>
-        public enum UME_TypeEnum
+        public enum UmeTypeEnum
         {
-            /// <summary>
-            /// 注册
-            /// </summary>
-            regist = 0,
-            /// <summary>
-            /// 找回密码
-            /// </summary>
-            findPwd = 1
+            Regist = 0,
+            FindPwd = 1
         }
         #endregion
 

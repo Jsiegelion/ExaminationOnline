@@ -39,14 +39,10 @@
 			manager.StartNewFile(entity.TableName.ToUpper()+".cs");
 
 #>
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Mammothcode.Model;
 using Mammothcode.Public.Data;
-namespace Mammothcode.BLL
+namespace Mammothcode.Bll
 {
 
     public partial class <#= entity.TableName.ToUpper() #>_BLL:BLLBase<<#= entity.TableName.ToUpper() #>>

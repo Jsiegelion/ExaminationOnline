@@ -1,14 +1,9 @@
-﻿using Mammothcode.Public.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using Mammothcode.BLL;
+using Mammothcode.Public.Data;
 
-namespace Mammothcode.BLL
+namespace Mammothcode.Bll
 {
     public class BLLBase<T>
         where T : class,new()
@@ -16,7 +11,7 @@ namespace Mammothcode.BLL
         /// <summary>
         /// connectionStrings的连接字符串名称
         /// </summary>
-        public static string connectionName = Config.connectionStringsName;
+        public static string connectionName = BllConfig.ConnectionStringsName;
 
         /// <summary>
         ///   数据库基础类
@@ -147,7 +142,7 @@ namespace Mammothcode.BLL
 
         #endregion
 
-        #region  查询
+    #region  查询
 
         public virtual bool IsExist(DapperExQuery<T> query)
         {

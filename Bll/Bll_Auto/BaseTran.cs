@@ -2,21 +2,26 @@
 using System.Data;
 using Mammothcode.Public.Data;
 
-namespace Mammothcode.BLL.Bll_Auto
+namespace Mammothcode.Bll.Bll_Auto
 {
     public class BaseTran
     {
-        public static bool tran_common(Func<DbBase, IDbTransaction, bool> func)
+        /// <summary>
+        /// 事务壳
+        /// </summary>
+        /// <param name="func"></param>
+        /// <returns></returns>
+        public static bool TranCommon(Func<DbBase, IDbTransaction, bool> func)
         {
             bool isSuccess = true;
             //打开数据库
-            using (DbBase DbContext = new DbBase(Config.connectionStringsName))
+            using (DbBase dbContext = new DbBase(BllConfig.ConnectionStringsName))
             {
-                using (IDbTransaction tran = DbContext.DbTransaction)
+                using (IDbTransaction tran = dbContext.DbTransaction)
                 {
                     try
                     {
-                        isSuccess = func(DbContext, tran);
+                        isSuccess = func(dbContext, tran);
                     }
                     catch (Exception e)
                     {

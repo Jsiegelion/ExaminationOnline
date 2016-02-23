@@ -7,7 +7,7 @@
     <ProjectGuid>{F1AC5261-FB96-414E-AA0F-E5363CCA06BF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mammothcode.BLL</RootNamespace>
+    <RootNamespace>Mammothcode.Bll</RootNamespace>
     <AssemblyName>Mammothcode.Bll</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -49,8 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bll_Auto\BaseTran.cs" />
+    <Compile Include="Bll_Auto\BLLAuto.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BLLAuto.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bll_Auto\BLLBase.cs" />
-    <Compile Include="Config.cs" />
+    <Compile Include="BllConfig.cs" />
     <Compile Include="Eunm\EnumAction.cs" />
     <Compile Include="Eunm\EnumCommon.cs" />
     <Compile Include="Eunm\Enums.cs" />

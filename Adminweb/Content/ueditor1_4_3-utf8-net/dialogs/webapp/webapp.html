@@ -1,4 +1,4 @@
-<!DOCTYPE>
+﻿<!DOCTYPE>
 <html>
 <head>
     <title></title>
@@ -42,7 +42,7 @@
 
             var script = document.createElement( "script" );
             script.type = "text/javascript";
-            script.src = "http://app.baidu.com/appweb/api/search?auto=yes&container=container&apikey=" + apikey + "&instanceName=baiduApp&callback=clickCallback&config=searchConfig";
+            script.src = "http://app.baidu.com/appweb/api/search?auto=yes&container=container&apikey=" + apikey + "&instanceName=baiduApp&callback=clickCallback&config=searchBllConfig";
             document.body.appendChild( script );
         } else {
             $G( "appShow" ).innerHTML = "<p class='errorMsg'>"+lang.tip1+"<a title='"+lang.anthorApi+"' href='http://app.baidu.com/static/cms/getapikey.html' target='_blank'>"+lang.applyFor+"</a></p><p class='errorMsg'>"+lang.tip2+"</p>" ;

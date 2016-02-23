@@ -91,6 +91,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoreTool\Html\RazorBind.cs" />
     <Compile Include="Data\DataAnaly\DataJudgeUtil.cs" />
     <Compile Include="Data\DataAnaly\RegexJayUtil.cs" />
     <Compile Include="Data\DataAnaly\RegexNetUtil.cs" />

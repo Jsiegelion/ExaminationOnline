@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Mammothcode.Middle.Core {
+namespace Mammothcode.Bll.Resource {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Mammothcode.Middle.Core {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Mammothcode.Middle.Core.ResourceMessage", typeof(ResourceMessage).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Mammothcode.Bll.Resource.ResourceMessage", typeof(ResourceMessage).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

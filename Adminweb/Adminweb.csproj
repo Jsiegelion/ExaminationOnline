@@ -4030,10 +4030,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bll\Mammothcode.Bll.csproj">
-      <Project>{f1ac5261-fb96-414e-aa0f-e5363cca06bf}</Project>
-      <Name>Mammothcode.Bll</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Framwork-Core\Mammothcode.Public.Core.csproj">
       <Project>{73650d83-bc03-4a8f-bb16-09f2d6f6a71e}</Project>
       <Name>Mammothcode.Public.Core</Name>

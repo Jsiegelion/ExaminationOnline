@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-UI", "01-UI", "{6A30A187-39E7-4418-87D7-4CD1B364015F}"
 EndProject
@@ -25,9 +25,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mammothcode.Public.Data", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mammothcode.Public.Core", "Framwork-Core\Mammothcode.Public.Core.csproj", "{73650D83-BC03-4A8F-BB16-09F2D6F6A71E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mammothcode.Bll", "Bll\Mammothcode.Bll.csproj", "{F1AC5261-FB96-414E-AA0F-E5363CCA06BF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mammothcode.Model", "Model\Mammothcode.Model.csproj", "{BCDC976C-08B7-4867-B983-2CC1C97789EB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06-Reference", "06-Reference", "{5EC98337-40D2-4F55-B381-8A234AEAD786}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Mammothcode.Technology\Mammothcode.XiuCheWenwen\Reference\Moq.dll = ..\..\Mammothcode.Technology\Mammothcode.XiuCheWenwen\Reference\Moq.dll
+		..\..\Mammothcode.Technology\Mammothcode.XiuCheWenwen\Reference\nunit.framework.dll = ..\..\Mammothcode.Technology\Mammothcode.XiuCheWenwen\Reference\nunit.framework.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,14 +61,6 @@ Global
 		{73650D83-BC03-4A8F-BB16-09F2D6F6A71E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73650D83-BC03-4A8F-BB16-09F2D6F6A71E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73650D83-BC03-4A8F-BB16-09F2D6F6A71E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F1AC5261-FB96-414E-AA0F-E5363CCA06BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1AC5261-FB96-414E-AA0F-E5363CCA06BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1AC5261-FB96-414E-AA0F-E5363CCA06BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1AC5261-FB96-414E-AA0F-E5363CCA06BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BCDC976C-08B7-4867-B983-2CC1C97789EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BCDC976C-08B7-4867-B983-2CC1C97789EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BCDC976C-08B7-4867-B983-2CC1C97789EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BCDC976C-08B7-4867-B983-2CC1C97789EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,10 +69,8 @@ Global
 		{F312F38E-3D63-40FB-A924-9E049FDAB8EA} = {6A30A187-39E7-4418-87D7-4CD1B364015F}
 		{2E231E39-F538-40A6-862F-4EC3E9F4BC81} = {6A30A187-39E7-4418-87D7-4CD1B364015F}
 		{6D87BE2E-B8E6-451B-A31C-E3B2414A4131} = {4A9A06F0-1CE5-4273-9392-648E7F42E893}
-		{F1AC5261-FB96-414E-AA0F-E5363CCA06BF} = {182267E2-95B4-4314-84E0-9A1AA80181AD}
-		{BCDC976C-08B7-4867-B983-2CC1C97789EB} = {182267E2-95B4-4314-84E0-9A1AA80181AD}
+		{EB1A77C9-DFA5-4F5E-9BEB-04B0E53A5019} = {C7C07E06-F65E-4479-956E-FC16579CDE99}
 		{63149C2A-9BCC-46BD-B8A7-45AAFEBF6E3E} = {C51081F3-9A25-4003-8F1C-9B6D6B49AF53}
 		{73650D83-BC03-4A8F-BB16-09F2D6F6A71E} = {C51081F3-9A25-4003-8F1C-9B6D6B49AF53}
-		{EB1A77C9-DFA5-4F5E-9BEB-04B0E53A5019} = {C7C07E06-F65E-4479-956E-FC16579CDE99}
 	EndGlobalSection
 EndGlobal

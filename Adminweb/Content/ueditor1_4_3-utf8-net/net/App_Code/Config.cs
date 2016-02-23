@@ -8,7 +8,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Config 的摘要说明
+/// BllConfig 的摘要说明
 /// </summary>
 public static class Config
 {

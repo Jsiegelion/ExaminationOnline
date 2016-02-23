@@ -73,5 +73,15 @@ namespace Mammothcode.Core.Data.DataAnaly
 
             return strText;
         }
+
+        /// <summary>
+        /// 判断数组中是否有空的
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static bool ArrayIsNullOrEmpty(IEnumerable<string> arr)
+        {
+            return arr.Any(string.IsNullOrWhiteSpace);
+        }
     }
 }

@@ -37,12 +37,8 @@
 
 					#region 指定输出CS文件内容(模板）
 #>
-
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Mammothcode.Public.Data;
 namespace Mammothcode.Model
 

@@ -3,3 +3,8 @@ G:\TortoiseSVN\Mammothcode.Technology\Mammothcode.XiuCheWenwen\Mammothcode.middl
 G:\TortoiseSVN\Mammothcode.Technology\Mammothcode.XiuCheWenwen\Mammothcode.Core\obj\Debug\Mammothcode.Core.dll
 G:\TortoiseSVN\Mammothcode.Technology\Mammothcode.XiuCheWenwen\Mammothcode.Core\obj\Debug\Mammothcode.Core.pdb
 G:\TortoiseSVN\Mammothcode.Technology\Mammothcode.XiuCheWenwen\Mammothcode.Core\obj\Debug\Mammothcode.Public.Core.csprojResolveAssemblyReference.cache
+G:\SchoolProject\ExaminationOnline\Mammothcode.middle.Core\bin\Debug\Mammothcode.Core.dll
+G:\SchoolProject\ExaminationOnline\Mammothcode.middle.Core\bin\Debug\Mammothcode.Core.pdb
+G:\SchoolProject\ExaminationOnline\Framwork-Core\obj\Debug\Mammothcode.Public.Core.csprojResolveAssemblyReference.cache
+G:\SchoolProject\ExaminationOnline\Framwork-Core\obj\Debug\Mammothcode.Core.dll
+G:\SchoolProject\ExaminationOnline\Framwork-Core\obj\Debug\Mammothcode.Core.pdb

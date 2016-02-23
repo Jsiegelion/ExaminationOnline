@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * UEditor
  * version: ueditor
  * build: Thu May 29 2014 16:48:12 GMT+0800 (中国标准时间)
@@ -6701,7 +6701,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
      * var editor = new UE.Editor();
      * editor.execCommand('blod');
      * ```
-     * @see UE.Config
+     * @see UE.BllConfig
      */
 
     /**
@@ -6714,7 +6714,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
      * var editor = new UE.Editor();
      * editor.execCommand('blod');
      * ```
-     * @see UE.Config
+     * @see UE.BllConfig
      */
     var Editor = UE.Editor = function (options) {
         var me = this;
