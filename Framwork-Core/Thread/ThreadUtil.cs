@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Mammothcode.Core.Thread
@@ -22,26 +20,22 @@ namespace Mammothcode.Core.Thread
         /// <returns>执行结果</returns>
         public bool ExecuteParaller(IList<object> objList, int maxDegree, Action<object> methodMain)
         {
+            bool success = false;
             try
             {
-                Parallel.ForEach<object>(objList,
-                           new ParallelOptions { MaxDegreeOfParallelism = maxDegree },
-                          (n) =>
-                          {
-                              methodMain(n);
-                          });
-                return true;
+                Parallel.ForEach(objList,
+                                 new ParallelOptions { MaxDegreeOfParallelism = maxDegree },
+                                 methodMain);
+                success = true;
             }
             catch (AggregateException ae)
             {
                 foreach (var ex in ae.InnerExceptions)
-                { 
-                      //记录日志
+                {
+                    //记录日志
                 }
-                return false;
             }
+            return success;
         }
-
-    
     }
 }

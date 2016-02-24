@@ -5,13 +5,15 @@ namespace Mammothcode.Core.CoreTool.Html
     public static class RazorBind
     {
         /// <summary>
-        /// 前台Razor绑定
-        /// 创建人：林以恒
+        /// use razor bind html
+        /// author: Baby
         /// 2016-2-23
         /// </summary>
-        /// <param name="str"></param>
-        /// <param name="prop"></param>
-        /// <param name="defaultStr"></param>
+        /// <param name="str">source string</param>
+        /// <param name="prop">properties</param>
+        /// <param name="defaultStr">
+        /// when source is null or empty use default string to bind html
+        /// </param>
         /// <returns></returns>
         public static string Properties(string str, string prop, string defaultStr)
         {
@@ -32,7 +34,7 @@ namespace Mammothcode.Core.CoreTool.Html
         #region stringAdd
 
         /// <summary>
-        /// 组合字符串为prop='str'
+        /// make string as prop='str'
         /// </summary>
         /// <param name="str"></param>
         /// <param name="prop"></param>

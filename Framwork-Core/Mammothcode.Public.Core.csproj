@@ -91,6 +91,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseData\Enums\CoreEnums.cs" />
     <Compile Include="CoreTool\Html\RazorBind.cs" />
     <Compile Include="Data\DataAnaly\DataJudgeUtil.cs" />
     <Compile Include="Data\DataAnaly\RegexJayUtil.cs" />

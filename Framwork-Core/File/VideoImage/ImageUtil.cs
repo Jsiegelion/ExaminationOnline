@@ -51,7 +51,7 @@ namespace Mammothcode.Core.File
         /// <returns></returns>
         public static bool StreamThumbnail(byte[] inStream, string outPath, int flag)
         {
-            System.Drawing.Image iSource = SetByteToImage(inStream);
+            Image iSource = SetByteToImage(inStream);
             ImageFormat tFormat = iSource.RawFormat;
             //以下代码为保存图片时，设置压缩质量
             EncoderParameters ep = new EncoderParameters();
@@ -61,19 +61,12 @@ namespace Mammothcode.Core.File
             ep.Param[0] = eParam;
             try
             {
-                ImageCodecInfo[] arrayICI = ImageCodecInfo.GetImageEncoders();
-                ImageCodecInfo jpegICIinfo = null;
-                for (int x = 0; x < arrayICI.Length; x++)
+                ImageCodecInfo[] arrayIci = ImageCodecInfo.GetImageEncoders();
+                ImageCodecInfo jpegIcIinfo = arrayIci.
+                                             FirstOrDefault(t => t.FormatDescription.Equals("JPEG"));
+                if (jpegIcIinfo != null)
                 {
-                    if (arrayICI[x].FormatDescription.Equals("JPEG"))
-                    {
-                        jpegICIinfo = arrayICI[x];
-                        break;
-                    }
-                }
-                if (jpegICIinfo != null)
-                {
-                    iSource.Save(outPath, jpegICIinfo, ep);//dFile是压缩后的新路径
+                    iSource.Save(outPath, jpegIcIinfo, ep);//dFile是压缩后的新路径
                 }
                 else
                 {
@@ -88,7 +81,6 @@ namespace Mammothcode.Core.File
             }
             finally
             {
-                iSource.Dispose();
                 iSource.Dispose();
             }
         }
@@ -680,7 +672,7 @@ namespace Mammothcode.Core.File
             System.Drawing.Image imgSource = b;
             System.Drawing.Imaging.ImageFormat thisFormat = imgSource.RawFormat;
             int sW = 0, sH = 0;
-            // 按比例缩放           
+            // 按比例缩放
             int sWidth = imgSource.Width;
             int sHeight = imgSource.Height;
             if (sHeight > destHeight || sWidth > destWidth)
@@ -704,13 +696,13 @@ namespace Mammothcode.Core.File
             Bitmap outBmp = new Bitmap(destWidth, destHeight);
             Graphics g = Graphics.FromImage(outBmp);
             g.Clear(Color.Transparent);
-            // 设置画布的描绘质量         
+            // 设置画布的描绘质量
             g.CompositingQuality = CompositingQuality.HighQuality;
             g.SmoothingMode = SmoothingMode.HighQuality;
             g.InterpolationMode = InterpolationMode.HighQualityBicubic;
             g.DrawImage(imgSource, new Rectangle((destWidth - sW) / 2, (destHeight - sH) / 2, sW, sH), 0, 0, imgSource.Width, imgSource.Height, GraphicsUnit.Pixel);
             g.Dispose();
-            // 以下代码为保存图片时，设置压缩质量     
+            // 以下代码为保存图片时，设置压缩质量
             EncoderParameters encoderParams = new EncoderParameters();
             long[] quality = new long[1];
             quality[0] = 100;

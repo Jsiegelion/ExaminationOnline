@@ -8,3 +8,5 @@ G:\SchoolProject\ExaminationOnline\Mammothcode.middle.Core\bin\Debug\Mammothcode
 G:\SchoolProject\ExaminationOnline\Framwork-Core\obj\Debug\Mammothcode.Public.Core.csprojResolveAssemblyReference.cache
 G:\SchoolProject\ExaminationOnline\Framwork-Core\obj\Debug\Mammothcode.Core.dll
 G:\SchoolProject\ExaminationOnline\Framwork-Core\obj\Debug\Mammothcode.Core.pdb
+G:\SchoolProject\ExaminationOnline\Mammothcode.middle.Core\bin\Debug\Mammothcode.Core.dll.CodeAnalysisLog.xml
+G:\SchoolProject\ExaminationOnline\Mammothcode.middle.Core\bin\Debug\Mammothcode.Core.dll.lastcodeanalysissucceeded

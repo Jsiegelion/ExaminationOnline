@@ -6,10 +6,10 @@ namespace Tests.Core
     [TestFixture]
     public class TestRazorBind
     {
-        private string _str = string.Empty;
-        private string _prop = string.Empty;
-        private string _target = string.Empty;
-        private string _default = string.Empty;
+        private string _str     = string.Empty; //source string
+        private string _prop    = string.Empty; //properties
+        private string _target  = string.Empty; //target result
+        private string _default = string.Empty; //if source is null or empty, we use defaultstring bind html
 
         [SetUp]
         public void TestSetUp()
@@ -53,6 +53,7 @@ namespace Tests.Core
             _target = string.Empty;
             _str = null;
             _prop = "src";
+            _default = null;
             var result = RazorBind.Properties(_str, _prop, _default);
             Assert.AreEqual(_target, result);
         }
@@ -73,6 +74,7 @@ namespace Tests.Core
             _target = string.Empty;
             _str = string.Empty;
             _prop = "src";
+            _default = string.Empty;
             var result = RazorBind.Properties(_str, _prop, _default);
             Assert.AreEqual(_target, result);
         }
